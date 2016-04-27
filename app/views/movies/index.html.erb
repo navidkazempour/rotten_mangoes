@@ -2,7 +2,7 @@
 <%= link_to "Submit a movie!", new_movie_path %>
 <hr>
 <% @movies.each do |movie| %>
-  <%= link_to image_tag(movie.poster_image_url), movie_path(movie) %>
+  <%= link_to image_tag(movie.poster_image_url, size: "200x200"), movie_path(movie) %>
   <%= link_to image_tag(movie.image.thumb), movie_path(movie) %>
   <h2><%= link_to movie.title, movie_path(movie) %></h2>
   <h3><%= movie.release_date %></h3>
@@ -10,5 +10,3 @@
   <p><%= movie.description %></p>
   <hr>
 <% end %>
-
-<!-- , size: "200x200" -->

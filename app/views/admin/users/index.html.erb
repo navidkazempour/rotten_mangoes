@@ -1,7 +1,8 @@
+<%= paginate @users %>
+
 <% @users.each do |user| %>
   <h3>User full name: <%= user.full_name %></h3>
   <p>Username: <%= user.email %></p>
-  <p>Password: <%= user.password_digest %></p>
   <p>Is Admin? <%= user.admin %></p><br>
 <% end %>
 
