@@ -47,3 +47,4 @@ end
 
 gem "rmagick"
 gem "carrierwave"
+gem 'kaminari'
