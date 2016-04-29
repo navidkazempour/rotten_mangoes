@@ -48,4 +48,5 @@ end
 gem "rmagick"
 gem "carrierwave"
 gem 'kaminari'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'faker', '~> 1.6','>= 1.6.3'
