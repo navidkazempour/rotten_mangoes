@@ -48,3 +48,4 @@ end
 gem "rmagick"
 gem "carrierwave"
 gem 'kaminari'
+gem 'faker', '~> 1.6','>= 1.6.3'
