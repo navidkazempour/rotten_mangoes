@@ -8,4 +8,11 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    UserMailer.welcome_email(@user).deliver
+    @user.destroy
+    direct_to 
+  end
+
 end
