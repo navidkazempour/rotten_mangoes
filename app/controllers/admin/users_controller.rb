@@ -42,6 +42,7 @@ class Admin::UsersController < ApplicationController
 
     def destroy
       @user = User.find(params[:id])
+      UserMailer.welcome_email(@user).deliver
       @user.destroy
       redirect_to admin_users_path
     end
@@ -51,12 +52,5 @@ class Admin::UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:email, :firstname, :lastname, :password, :password_confirmation)
     end
-
-  def destroy
-    @user = User.find(params[:id])
-    UserMailer.welcome_email(@user).deliver
-    @user.destroy
-    direct_to 
-  end
 
 end
