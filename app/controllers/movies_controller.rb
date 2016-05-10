@@ -1,22 +1,7 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all
-
-    if params[:title].present? || params[:director].present? || params[:runtime_in_minutes].present?
-      if params[:runtime_in_minutes] == '1'
-        lower_range = 0
-        upper_range = 90
-      elsif params[:runtime_in_minutes] == '2'
-        upper_range = 120
-        lower_range = 90
-      elsif params[:runtime_in_minutes] == '3'
-        lower_range = 120
-        upper_range = Movie.maximum("runtime_in_minutes") + 1
-      end
-      @movies = Movie.where("title LIKE ? OR director LIKE ? OR runtime_in_minutes BETWEEN ? AND ?" , params[:title], params[:director], lower_range,upper_range)
-    end
-
+    @movies = Movie.filter(params[:title], params[:director], params[:runtime_in_minutes])
   end
 
   def show
@@ -52,8 +37,7 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    @movie = Movie.find(params[:id])
-    @movie.destroy
+    Movie.find(params[:id]).destroy
     redirect_to movies_path
   end
 

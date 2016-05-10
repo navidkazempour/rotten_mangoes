@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def restrict_access
-    if !current_user
+    if !current_users
       flash[:alert] = "You must log in."
       redirect_to new_session_path
     end

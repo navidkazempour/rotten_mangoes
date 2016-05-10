@@ -45,6 +45,7 @@ group :development do
   gem 'spring'
 end
 
+gem 'imdb'
 gem "rmagick"
 gem "carrierwave"
 gem 'kaminari'

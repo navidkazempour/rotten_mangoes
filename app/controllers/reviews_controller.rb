@@ -26,7 +26,6 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:text, :rating_out_of_ten)
-  endams.require(:review).permit(:text, :rating_out_of_ten)
   end
 
 end

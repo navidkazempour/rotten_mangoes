@@ -15,14 +15,14 @@
 # end
 
 
-@all_movies = Imdb::Top250.new.movies
-@all_movies.each do |num|
-  num = num.id
-  movie = Imdb::Movie.new(num)
-  Movie.create!(title: movie.title.gsub(/\d*\.\s*/, ''),
-  release_date: movie.release_date,
-  director: movie.director,
-  runtime_in_minutes: movie.length,
-  poster_image_url: movie.poster,
-  description: movie.plot)
-end
+# @all_movies = Imdb::Top250.new.movies
+# @all_movies.each do |num|
+#   num = num.id
+#   movie = Imdb::Movie.new(num)
+#   Movie.create!(title: movie.title.gsub(/\d*\.\s*/, ''),
+#   release_date: movie.release_date,
+#   director: movie.director,
+#   runtime_in_minutes: movie.length,
+#   poster_image_url: movie.poster,
+#   description: movie.plot)
+# end
